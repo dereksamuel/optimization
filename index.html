@@ -81,5 +81,40 @@
         <a href="https://kitsu.io" target="_blank">Kitsu</a>
       </p>
     </footer>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(
+            function(registration) {
+              // Registration was successful
+              console.log(
+                'ServiceWorker registration successful with scope: ',
+                registration.scope
+              )
+            },
+            function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err)
+            }
+          )
+        })
+      }
+    </script>
+    <!-- Hotjar Tracking Code for https://optimizationwebdk.netlify.app/ -->
+    <script>
+      ;(function(h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function() {
+            ;(h.hj.q = h.hj.q || []).push(arguments)
+          }
+        h._hjSettings = { hjid: 2286297, hjsv: 6 }
+        a = o.getElementsByTagName('head')[0]
+        r = o.createElement('script')
+        r.async = 1
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv
+        a.appendChild(r)
+      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=')
+    </script>
   </body>
 </html>
